@@ -9,10 +9,8 @@ programa
         inteiro mesUsuario
         inteiro diaUsuario
 
-        escreva("Resolva os exercícios.\n\n")
-
-        escreva("1.Faça um sistema que leia a idade de uma pessoa expressa em anos,meses e dias e mostre-a expressa apenas em dias.\n\n")
-
+        
+        
         escreva("Qual o seu nome: ")
         leia(nomeUsuario)
         escreva("Qual o dia do seu nascimento: ")
@@ -36,7 +34,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 547; 
+ * @POSICAO-CURSOR = 157; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
