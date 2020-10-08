@@ -9,20 +9,23 @@ public class Exercicio_3_While_Idade
 	{
 		Scanner leia = new Scanner(System.in);
 		
-		int idade = 1,x = 0,y = 0;
+		int  mais50 =0, menos21 =0, idade =0;		
 		
-		while(idade != 99) 
+		while(idade != -99) 
 		{
-			 if(idade<21) x++;
-             if(idade>50) y++;
-             
-             System.out.print("\n Digite a idade da pessoa (para Sair digite -99) : ");
-             idade = leia.nextInt();
-             System.out.printf("%d",idade);
+			System.out.println("Digite sua idade: * (Para sair digite -99)");
+			idade = leia.nextInt();
+			if(idade> 50)
+			{
+				mais50++;
+			}else if(idade < 21 && idade > 0)
+			{
+				menos21++;
+			}
+			
 		}
-		System.out.printf("\n Total com menos de 21 anos:%d",x);
 		
-		System.out.printf("\n Total com mais de 50 anos E:%d",y);
+		System.out.printf("\nAo total foram %d pessoas com menos de 21 anos e %d pessoas com mais de 50 anos", menos21, mais50);
 		
 		
 		leia.close();
