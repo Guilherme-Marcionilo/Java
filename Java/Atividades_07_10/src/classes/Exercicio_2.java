@@ -19,33 +19,32 @@ public class Exercicio_2 {
 		System.out.print("Digite um número (inteiro): ");
 		c = leia.nextInt();
 		
-		if (a <= b && a <= c) {
-			if(b <= c) {
-				System.out.printf("Em ordem crescente: %d; %d e %d", a, b, c);
+		if (a < b) {
+			if(b < c) {
+				System.out.println("Ordem crescente: " + "\n" + a + "\n" + b + "\n"+ c);
+			}
+			else if (a < c) {
+				System.out.println("Ordem crescente: " + "\n" + a + "\n" + c + "\n"+ b);
 			}
 			else {
-				System.out.printf("Em ordem crescente: %d; %d e %d", a, c, b);
+				System.out.println("Ordem crescente: " + "\n" + c + "\n" + a + "\n"+ b);
 			}
 		}
-		else if(b <= a && b <= c) {
-			if (a <= c) {
-				System.out.printf("Em ordem crescente: %d; %d e %d", b, a, c);
+		
+		else if (b < c) 
+		{
+			if (a < c) {
+				System.out.println("Ordem crescente: " + "\n" + b + "\n" + a + "\n"+ c);
 			}
 			else {
-				System.out.printf("Em ordem crescente: %d; %d e %d", b, c, a);
+				System.out.println("Ordem crescente: " + "\n" + b + "\n" + c + "\n"+ a);
 			}
 		}
-		else if(c <= a && c <= b) {
-			if (a <= b) {
-				System.out.printf("Em ordem crescente: %d; %d e %d", c, a, b);
-			}
-			else {
-				System.out.printf("Em ordem crescente: %d; %d e %d", c, b, a);
-			}
-		}
+		
 		else {
-			System.out.printf("Em ordem crescente: %d; %d e %d", a, b, c);
+			System.out.println("Ordem crescente: " + "\n" + c + "\n" + b + "\n"+ a);
 		}
+		
 		
 		
 		
