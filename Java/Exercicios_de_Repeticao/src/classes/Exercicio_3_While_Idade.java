@@ -13,7 +13,7 @@ public class Exercicio_3_While_Idade
 		
 		while(idade != -99) 
 		{
-			System.out.println("Digite sua idade: * (Para sair digite -99)");
+			System.out.println("Digite sua idade: (Digite -99 para sair)");
 			idade = leia.nextInt();
 			if(idade> 50)
 			{
