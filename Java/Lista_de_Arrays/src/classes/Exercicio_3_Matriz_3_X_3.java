@@ -4,28 +4,28 @@ import java.util.Scanner;
 
 public class Exercicio_3_Matriz_3_X_3 {
 
-	public static void main(String[] args) {
-		
-		Scanner leia = new Scanner(System.in);
-		
-		int matriz[][] = new int[3][3];
-		
-		int x = 0, y = 0, n = 0;
-		
-		for(x =0; x < 3; x++) 
-		{
-			for (y=0; y < 3; y++)
-			{
-				System.out.println("Posição: "+ matriz[x+1][y+1] + " Digite um número:");
-				n = leia.nextInt();
+	//Leia uma matriz 3 x 3, conte e escreva quantos valores maiores que 10 ela possui.
+	public static void main (String[] args) {
+
+		Scanner leia = new Scanner (System.in);
+
+		int matriz [][] = new int [3][3];
+		int contador = 0;
+
+		for (int l =0; l < 3;l++) {
+
+			for (int c = 0; c<3;c++) {
+				System.out.printf("Digite um numero inteiro positivo para linha %d e coluna %d  :",l+1,c+1);
+				matriz[l][c] = leia.nextInt();
+				if (matriz[l][c]>10) contador++;
 			}
 		}
-		
-		
-		
-		
-		
-		leia.close();
+
+		System.out.println();
+		System.out.println("O total de numeros maior que 10 é :"+contador);
+
+
+
 	}
 
 }
