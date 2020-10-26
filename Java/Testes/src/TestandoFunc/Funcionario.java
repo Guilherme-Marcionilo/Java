@@ -1,32 +1,26 @@
-package classes;
+package TestandoFunc;
 
-public abstract class Funcionario 
+public class Funcionario 
 {
-	protected String nome;
-	protected String matricula;
-	protected double salariobase;
-	protected double gratificacaoProd;
-	protected int nrDependentes;
+	private String matricula;
+	private double salariobase;
+	private double gratificacaoProd;
 	
-	public Funcionario(String nome, String matricula, double salariobase, double gratificacaoProd, int nrDependentes)
+	
+	public Funcionario(String matricula, double salariobase, double gratificacaoProd)
 	{
-		this.nome = nome;
 		this.matricula = matricula;
 		this.salariobase = salariobase;
 		this.gratificacaoProd = gratificacaoProd;
-		this.nrDependentes = nrDependentes;
 	}
 	
 	public void mostrarinformacoes()
 	{
-		System.out.println("------ Folhas de Pagamento ------\n\n");
-		System.out.println("Nome: "+ nome);
-		System.out.println("Matricula: " + matricula);
+		
+		System.out.println("Nome: "+ matricula);
 		System.out.println("Salariobase: "+ salariobase);
 		System.out.println("Gratificação de Produtividade: "+ gratificacaoProd);
-		System.out.println("Número de dependentes: "+ nrDependentes);
 	}
-	
 
 	public double fornecaDesconto(double valor)
 	{
@@ -48,7 +42,6 @@ public abstract class Funcionario
 		
 	}
 	
-
 	public double fornecaSalarioLiquido(double valor)
 	{
 		double liquido;
@@ -78,46 +71,23 @@ public abstract class Funcionario
 		return bruto;
 		
 	}
-
-	public String getNome() {
-		return nome;
-	}
-
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
-
-	public String getMatricula() {
-		return matricula;
-	}
-
-	public void setMatricula(String matricula) {
-		this.matricula = matricula;
-	}
-
+	
 	public double getSalariobase() {
 		return salariobase;
 	}
-
 	public void setSalariobase(double salariobase) {
 		this.salariobase = salariobase;
 	}
-
+	public String getMatricula() {
+		return matricula;
+	}
+	public void setMatricula(String matricula) {
+		this.matricula = matricula;
+	}
 	public double getGratificacaoProd() {
 		return gratificacaoProd;
 	}
-
 	public void setGratificacaoProd(double gratificacaoProd) {
 		this.gratificacaoProd = gratificacaoProd;
 	}
-
-	public double getNrDependentes() {
-		return nrDependentes;
-	}
-
-	public void setNrDependentes(int nrDependentes) {
-		this.nrDependentes = nrDependentes;
-	}
-	
-
 }

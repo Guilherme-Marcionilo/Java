@@ -1,43 +1,108 @@
 package classes;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
 public class Main {
 
 	public static void main(String[] args) {
-		Apoio Carlos = new Apoio("Carlos", 1200, 20, 2);
-		Chefe oi = new Chefe("Julio", 1100, 30, 10);
-		oi.mostrarinformacoes();
-		System.out.println("Desconto: "+ oi.fornecaDesconto(0));
-		System.out.println("Sal�rio bruto: "+  oi.fornecaSalarioBruto());
-		System.out.println("Sal�rio L�quido: "+ oi.fornecaSalarioLiquido());
-		
-		Carlos.mostrarinformacoes();
-		System.out.println("Valor Aux�lio Educa��o: "+ Carlos.fornecaAuxEducacao());
-		System.out.println("Sal�rio Bruto: "+ Carlos.fornecaSalarioBruto());
-		System.out.println("Sal�rio L�quido: "+ Carlos.fornecaSalarioLiquido());
-		
-		
-		Apoio Augustinho = new Apoio("Augustinho", 5000, 40, 1);
-		
-		Augustinho.mostrarinformacoes();
-		System.out.println("Valor Aux�lio Educa��o: "+ Augustinho.fornecaAuxEducacao());
-		System.out.println("Sal�rio Bruto: "+ Augustinho.fornecaSalarioBruto());
-		System.out.println("Sal�rio L�quido: "+ Augustinho.fornecaSalarioLiquido());
-		
-		Chefe Jose = new  Chefe("Jos� Luis", 1800, 25, 50);
-		
-		Jose.mostrarinformacoes();
-		System.out.println("Desconto: "+ Jose.fornecaDesconto(0));
-		System.out.println("Sal�rio bruto: "+  Jose.fornecaSalarioBruto());
-		System.out.println("Sal�rio L�quido: "+ Jose.fornecaSalarioLiquido());
 		
 		
 		
+		Scanner leia = new Scanner(System.in);
 		
+		List<Apoio> funApoio = new ArrayList();
+		List<Chefe> funChefe = new ArrayList();
+		
+		String nome;
+		String matricula;
+		double salariobase;
+		double gratificacaoProd;
+		double gratificacaoChefia = 0;
+		int nrDependentes;
+		int tipoFun;
+		int cadastro;
+		int x;
+		
+		System.out.println("--------------- Bem vindx ao You Dev Money ------------------\n\n");
+		System.out.println("█──██████────██████──█\r\n"
+				+ "█─██────██──██────██─█\r\n"
+				+ "─███─██─██████─██─███\r\n"
+				+ "──██────██──██────██\r\n"
+				+ "───██████────██████\r\n"
+				+ "");
+		
+		System.out.println("\n\n\n\n");
+		
+		System.out.println("Bom dia, boa tarde, boa noite!\n");
+		System.out.println("Deseja cadastrar um funcionário? \n1 - SIM \t 2 - NÃO");
+		cadastro = leia.nextInt();
+		
+		if (cadastro == 1) {
+			
+			do { 
 				
+				System.out.println("O funcionário é: \t 1 - Chefe \t 2 - Apoio");
+				tipoFun = leia.nextInt();
+				
+				System.out.print("Digite o nome: ");
+				nome = leia.next();
+				
+				System.out.print("Digite a matricula: ");
+				matricula = leia.next();
+				
+				System.out.print("Digite o Salário Base: ");
+				salariobase = leia.nextDouble();
+				
+				System.out.print("Digite o gratificacao: ");
+				gratificacaoProd = leia.nextDouble();
+				
+				System.out.print("Digite o número de dependentes: ");
+				nrDependentes = leia.nextInt();
+				
+				if(tipoFun == 2) 
+				{
+					funApoio.add(new Apoio(nome,matricula,salariobase,gratificacaoProd,nrDependentes));
+				}
+				else 
+				{
+					funChefe.add(new Chefe(nome,matricula,salariobase,gratificacaoProd,gratificacaoChefia,nrDependentes));
+				}
+				
+				System.out.println("Quer continuar um novo funcionário: \t 1 - Sim \t 2 - Não");
+				x = leia.nextInt();
+				
+				
+			}
+			while(x != 2);	
+			
+			System.out.println(funChefe.indexOf(nome));
+			
+			
+		}
+		
+		else { 
+			System.out.println("\n\n\n\n");
+			System.out.println("▄██████████████▄▐█▄▄▄▄█▌\r\n"
+					+ "██████▌▄▌▄▐▐▌███▌▀▀██▀▀\r\n"
+					+ "████▄█▌▄▌▄▐▐▌▀███▄▄█▌\r\n"
+					+ "▄▄▄▄▄██████████████▀\r\n"
+					+ "");
+			System.out.println("Sistema encerrado");
+		}
 		
 		
+		for (Apoio i: funApoio) {
+			
+			i.mostrarinformacoes();
+		}
 		
-
+		for (Chefe i: funChefe) {
+			
+			i.mostrarinformacoes();
+		}
+		leia.close();
 	}
 
 }

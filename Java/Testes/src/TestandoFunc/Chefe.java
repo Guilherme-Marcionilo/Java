@@ -1,22 +1,19 @@
-package classes;
+package TestandoFunc;
 public class Chefe extends Funcionario
 {
-
 	private double gratificacaoChefia;
-	protected int nrDependentes;
 	
-	public Chefe(String nome, String matricula, double salariobase, double gratificacaoProd, double gratificacaoChefia, int nrDependentes)
+	public Chefe(String matricula, double salariobase, double gratificacaoProd, double gratificacaoChefia)
 	{
-		super(nome,matricula, salariobase, gratificacaoProd,nrDependentes);
+		super(matricula, salariobase, gratificacaoProd);
 		this.gratificacaoChefia = gratificacaoChefia;
-		this.nrDependentes = nrDependentes;
 	}
 	public void mostrarinformacoes()
 	{
-		System.out.println("\n\n---- FUNCIONÁRIO CHEFx ----\n");
+		System.out.println("\n\n---- FUNCIONÁRIO CHEFIA ----\n");
 		super.mostrarinformacoes();
 		System.out.println("Gratificação Chefia: " + this.gratificacaoChefia);
-						
+		
 		
 	}
 	public double fornecaSalarioLiquido()
@@ -54,12 +51,7 @@ public class Chefe extends Funcionario
 	}
 	
 	
-	public double getNrDependentes() {
-		return nrDependentes;
-	}
-	public void setNrDependentes(int nrDependentes) {
-		this.nrDependentes = nrDependentes;
-	}
+
 	public double getGratificacaoChefia() {
 		return gratificacaoChefia;
 	}
@@ -67,6 +59,4 @@ public class Chefe extends Funcionario
 	public void setGratificacaoChefia(double gratificacaoChefia) {
 		this.gratificacaoChefia = gratificacaoChefia;
 	}
-	
-	
 }
