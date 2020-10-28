@@ -42,7 +42,9 @@ select * from tb_produtos where preco between 3 and 60;
 
 select * from tb_produtos where nome_prod like 'CO%';
 
-select * from tb_produtos inner join tb_categorias where tb_produtos.id_prod = tb_categorias.id_categorias;
+select * from tb_produtos inner join tb_categorias where tb_produtos.id_prod = tb_categorias.id_categoria;
+
+select * from tb_produtos inner join tb_categorias where tb_produtos.id_prod = tb_categorias.disponivel;
 
 
 
