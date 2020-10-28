@@ -59,6 +59,8 @@ select * from tb_funcionarios where nome_fun like 'C%';
 
 select * from tb_funcionarios inner join tb_cargo where tb_funcionarios.cargo = tb_cargo.id_cargo;
  
+select * from tb_funcionarios inner join tb_cargo;
 
+select * from tb_funcionarios,tb_cargo;
 
-
+select tb_funcionarios.nome_fun,tb_cargo.cargo from tb_funcionarios inner join tb_cargo where tb_funcionarios.cargo = tb_cargo.id_cargo;
