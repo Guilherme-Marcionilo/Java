@@ -1,29 +1,32 @@
 create database db_cidade_das_carnes;
+use db_cidade_das_carnes;
 
-create table tb_categoria (
+drop table tb_categoria;
+create table tb_categorias (
 	id_categoria bigint,
 	nome varchar(30),
-    qtdCarne int   
+    qtdCarne int,
+    disponivel boolean,
+    primary key (id_categoria)
 );
 
 insert into tb_categorias values
-(1, 'Categoria 1',3),
-(2, 'Categoria 2',3),
-(3, 'Categoria 3',3),
-(4, 'Sem Categoria',3),
-(5, 'Categoria não encontrada',3)
-;
+(1, 'Categoria 1',3,true),
+(2, 'Categoria 2',20,true),
+(3, 'Categoria 3',1,true),
+(4, 'Sem Categoria',0,false),
+(5, 'Categoria não encontrada',90,true);
 
+drop table tb_produtos;
 create table tb_produtos (
-     id_prod bigint,
+     id_prod bigint auto_increment,
      nome_prod varchar(30),
-     preco decimal(5,2),
-	 constraint fk_categoria foreign key (id_categoria)
-     references tb_categoria (id_categoria),
+     preco decimal(5,2),	
      primary key (id_prod)
 );
 
-insert into tb_produto values
+select * from tb_produtos;
+insert into tb_produtos (nome_prod,preco) values
 ('Picanha', 50.00),
 ('Coxão duro', 100.00),
 ('Picanha', 60.00),
