@@ -20,21 +20,22 @@ insert into tb_categorias values
 drop table tb_produtos;
 create table tb_produtos (
      id_prod bigint auto_increment,
+     id_categoria bigint,
      nome_prod varchar(30),
      preco decimal(5,2),	
-     primary key (id_prod)
-);
+     primary key (id_prod),
+     constraint fk_categoria foreign key (id_categoria) references tb_categorias (id_categoria));
 
 select * from tb_produtos;
-insert into tb_produtos (nome_prod,preco) values
-('Picanha', 50.00),
-('Coxão duro', 100.00),
-('Picanha', 60.00),
-('Capa de Filé', 650.00),
-('Fraldinha', 150.00),
-('Pescoço', 200.00),
-('Ponta de Agulha', 60.00),
-('Cupim', 10.00);
+insert into tb_produtos (nome_prod,preco,id_categoria) values
+('Picanha', 50.00,1),
+('Coxão duro', 100.00,1),
+('Picanha', 60.00,2),
+('Capa de Filé', 650.00,2),
+('Fraldinha', 150.00,3),
+('Pescoço', 200.00,3),
+('Ponta de Agulha', 60.00,4),
+('Cupim', 10.00,5);
 
 select * from tb_produtos where preco > 50.00;
 
