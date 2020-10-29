@@ -54,7 +54,7 @@ select * from tb_produto inner join tb_categoria;
 
 select * from tb_produto inner join tb_categoria where id_prod = id_categoria;
 
-select * from tb_produto inner join tb_categoria where nome_categoria = 'Alvenaria';
+
 
 
 
